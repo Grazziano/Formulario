@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -12,27 +12,34 @@
         #tamanhoContainer {
             width: 500px;
         }
+
+        #botao {
+            background-color: #349fcd;
+            color: #ffffff;
+            font-weight: bold;
+        }
     </style>
 </head>
 
 <body>
     <div class="container" id="tamanhoContainer" style="margin-top: 40px;">
-        <form>
+        <h4>Formulário de Cadastro</h4>
+        <form action="inserirProduto.php" method="post" style="margin-top: 20px">
             <div class="form-group">
                 <label>Número do produto</label>
-                <input type="number" class="form-control" placeholder="Insira o número do produto">
+                <input type="number" class="form-control" name="nroProduto" placeholder="Insira o número do produto" required>
             </div>
             <div class="form-group">
                 <label>Nome do produto</label>
-                <input type="text" class="form-control" placeholder="Insira o nome do produto">
+                <input type="text" class="form-control" name="nomeProduto" placeholder="Insira o nome do produto" required>
             </div>
             <div class="form-group">
                 <label>Quantidade</label>
-                <input type="number" class="form-control" placeholder="Insira a quantidade do produto">
+                <input type="number" class="form-control" name="quantidade" placeholder="Insira a quantidade do produto" required autocomplete="off">
             </div>
             <div class="form-group">
                 <label>Categoria</label>
-                <select class="form-control">
+                <select class="form-control" name="categoria">
                     <option>Periféricos</option>
                     <option>Hardware</option>
                     <option>Software</option>
@@ -42,7 +49,7 @@
             </div>
             <div class="form-group">
                 <label>Fornecedor</label>
-                <select class="form-control">
+                <select class="form-control" name="fornecedor">
                     <option>Fornecedor A</option>
                     <option>Fornecedor B</option>
                     <option>Fornecedor C</option>
@@ -51,7 +58,7 @@
                 </select>
             </div>
             <div style="text-align: right">
-                <button type="submit" class="btn btn-success btn-sm">Cadastrar</button>
+                <button type="submit" id="botao" class="btn btn-sm">Cadastrar</button>
             </div>
         </form>
     </div>
