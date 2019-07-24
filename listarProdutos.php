@@ -46,7 +46,8 @@
                     <td><?php echo $categoria ?></td>
                     <td><?php echo $quantidade ?></td>
                     <td><?php echo $fornecedor ?></td>
-                    <td><a class="btn btn-warning btn-sm" style="color: #ffffff" href="editarProduto.php?id=<?php echo $id ?>" role="button"> <i class="far fa-edit"></i> Editar</a></td>
+                    <td><a class="btn btn-warning btn-sm" style="color: #ffffff" href="editarProduto.php?id=<?php echo $id ?>" role="button"> <i class="far fa-edit"></i> Editar</a>
+                        <a class="btn btn-danger btn-sm" style="color: #ffffff" href="deletarProduto.php?id=<?php echo $id ?>" role="button"> <i class="far fa-trash-alt"></i></i> Deletar</a></td>
                 </tr>
             <?php
             }

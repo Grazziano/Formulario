@@ -18,6 +18,8 @@ $atualizar = mysqli_query($conexao, $sql);
 <div class="container" style="width: 400px">
     <center>
         <h3>Atualizado com sucesso!</h3>
-        <a href="listarProdutos.php" class="btn btn-sm btn-warning" style="color: #fff">Voltar</a>
+        <div style="margin-top: 10px">
+            <a href="listarProdutos.php" class="btn btn-sm btn-warning" style="color: #fff">Voltar</a>
+        </div>
     </center>
 </div>
