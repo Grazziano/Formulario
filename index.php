@@ -5,63 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Formulário de Cadastro</title>
-    <link rel="icon" href="img/icons8-google-forms-32.png">
     <link rel="stylesheet" href="css/bootstrap.css">
-
-    <style type="text/css">
-        #tamanhoContainer {
-            width: 500px;
-        }
-
-        #botao {
-            background-color: #349fcd;
-            color: #ffffff;
-            font-weight: bold;
-        }
-    </style>
+    <title>Menu</title>
 </head>
 
 <body>
-    <div class="container" id="tamanhoContainer" style="margin-top: 40px;">
-        <h4>Formulário de Cadastro</h4>
-        <form action="inserirProduto.php" method="post" style="margin-top: 20px">
-            <div class="form-group">
-                <label>Número do produto</label>
-                <input type="number" class="form-control" name="nroProduto" placeholder="Insira o número do produto" required>
+
+    <div class="container" style="margin-top: 40px">
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Adicionar Produto</h5>
+                        <p class="card-text">Opção para adicionar produtos no estoque.</p>
+                        <a href="adicionarProduto.php" class="btn btn-primary">Cadastrar Produto</a>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label>Nome do produto</label>
-                <input type="text" class="form-control" name="nomeProduto" placeholder="Insira o nome do produto" required>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Lista de Produtos</h5>
+                        <p class="card-text">Visualizar, editar e excluir produtos.</p>
+                        <a href="listarProdutos.php" class="btn btn-primary">Produtos</a>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label>Categoria</label>
-                <select class="form-control" name="categoria">
-                    <option>Periféricos</option>
-                    <option>Hardware</option>
-                    <option>Software</option>
-                    <option>Celulares</option>
-                    <option>Outros</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Quantidade</label>
-                <input type="number" class="form-control" name="quantidade" placeholder="Insira a quantidade do produto" required autocomplete="off">
-            </div>
-            <div class="form-group">
-                <label>Fornecedor</label>
-                <select class="form-control" name="fornecedor">
-                    <option>Fornecedor A</option>
-                    <option>Fornecedor B</option>
-                    <option>Fornecedor C</option>
-                    <option>Fornecedor D</option>
-                    <option>Fornecedor E</option>
-                </select>
-            </div>
-            <div style="text-align: right">
-                <button type="submit" id="botao" class="btn btn-sm">Cadastrar</button>
-            </div>
-        </form>
+        </div>
+
     </div>
 
     <script type="js/bootstrap.js"></script>
