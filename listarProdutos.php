@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://kit.fontawesome.com/1246aa0916.js"></script>
     <title>Listagem de Produtos</title>
 </head>
 
@@ -21,6 +22,7 @@
                     <th scope="col">Categoria</th>
                     <th scope="col">Quantidade</th>
                     <th scope="col">Fornecedor</th>
+                    <th scope="col">Ação</th>
                 </tr>
             </thead>
 
@@ -44,6 +46,7 @@
                     <td><?php echo $categoria ?></td>
                     <td><?php echo $quantidade ?></td>
                     <td><?php echo $fornecedor ?></td>
+                    <td><a class="btn btn-warning btn-sm" style="color: #ffffff" href="editarProduto.php?id=<?php echo $id ?>" role="button"> <i class="far fa-edit"></i> Editar</a></td>
                 </tr>
             <?php
             }

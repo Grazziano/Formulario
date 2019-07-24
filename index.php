@@ -35,10 +35,6 @@
                 <input type="text" class="form-control" name="nomeProduto" placeholder="Insira o nome do produto" required>
             </div>
             <div class="form-group">
-                <label>Quantidade</label>
-                <input type="number" class="form-control" name="quantidade" placeholder="Insira a quantidade do produto" required autocomplete="off">
-            </div>
-            <div class="form-group">
                 <label>Categoria</label>
                 <select class="form-control" name="categoria">
                     <option>Periféricos</option>
@@ -47,6 +43,10 @@
                     <option>Celulares</option>
                     <option>Outros</option>
                 </select>
+            </div>
+            <div class="form-group">
+                <label>Quantidade</label>
+                <input type="number" class="form-control" name="quantidade" placeholder="Insira a quantidade do produto" required autocomplete="off">
             </div>
             <div class="form-group">
                 <label>Fornecedor</label>
