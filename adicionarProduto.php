@@ -69,11 +69,22 @@
             <div class="form-group">
                 <label>Fornecedor</label>
                 <select class="form-control" name="fornecedor">
-                    <option>Fornecedor A</option>
-                    <option>Fornecedor B</option>
-                    <option>Fornecedor C</option>
-                    <option>Fornecedor D</option>
-                    <option>Fornecedor E</option>
+
+                    <?php
+                    include 'conexao.php';
+
+                    $sql2 = "SELECT * FROM fornecedor";
+                    $buscar2 = mysqli_query($conexao, $sql2);
+
+                    while ($array2 = mysqli_fetch_array($buscar2)) {
+                        $id_for = $array2['fornecedor.id'];
+                        $fornecedor = $array2['fornecedor'];
+                        ?>
+                        <option><?php echo $fornecedor ?></option>
+                    <?php
+                    }
+                    ?>
+
                 </select>
             </div>
             <div style="text-align: right">
