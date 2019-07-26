@@ -11,6 +11,23 @@
 </head>
 
 <body>
+
+    <?php
+    session_start();
+    $usuario = $_SESSION['usuario'];
+
+    if (!isset($_SESSION['usuario'])) {
+        header('Location: index.php');
+    }
+
+    include 'conexao.php';
+
+    $sql = "SELECT acesso FROM usuarios WHERE email = '$usuario' AND status = 'Ativo'";
+    $buscar = mysqli_query($conexao, $sql);
+    $array = mysqli_fetch_array($buscar);
+    $acesso = $array['acesso'];
+    ?>
+
     <div class="container" style="margin-top: 40px">
 
         <div style="text-align: right">
@@ -51,8 +68,22 @@
                     <td><?php echo $categoria ?></td>
                     <td><?php echo $quantidade ?></td>
                     <td><?php echo $fornecedor ?></td>
-                    <td><a class="btn btn-warning btn-sm" style="color: #ffffff" href="editarProduto.php?id=<?php echo $id ?>" role="button"> <i class="far fa-edit"></i> Editar</a>
-                        <a class="btn btn-danger btn-sm" style="color: #ffffff" href="deletarProduto.php?id=<?php echo $id ?>" role="button"> <i class="far fa-trash-alt"></i></i> Deletar</a></td>
+                    <td>
+                        <?php
+                        if (($acesso == 1) || ($acesso == 3)) {
+
+                            ?>
+                            <a class="btn btn-warning btn-sm" style="color: #ffffff" href="editarProduto.php?id=<?php echo $id ?>" role="button"> <i class="far fa-edit"></i> Editar</a>
+                        <?php
+                        }
+
+                        if ($acesso == 1) {
+                            ?>
+                            <a class="btn btn-danger btn-sm" style="color: #ffffff" href="deletarProduto.php?id=<?php echo $id ?>" role="button"> <i class="far fa-trash-alt"></i></i> Deletar</a>
+                        <?php
+                        }
+                        ?>
+                    </td>
                 </tr>
             <?php
             }

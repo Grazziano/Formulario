@@ -51,7 +51,7 @@
                         <a class="btn btn-success btn-sm" style="color: #ffffff" href="aprovarCadastro.php?id=<?php echo $id ?>&acesso=1" role="button"> <i class="far fa-thumbs-up"></i> Administrador</a>
                         <a class="btn btn-warning btn-sm" style="color: #ffffff" href="aprovarCadastro.php?id=<?php echo $id ?>&acesso=2" role="button"> <i class="far fa-thumbs-up"></i> Funcionário</a>
                         <a class="btn btn-dark btn-sm" style="color: #ffffff" href="aprovarCadastro.php?id=<?php echo $id ?>&acesso=3" role="button"> <i class="far fa-thumbs-up"></i> Gerente</a>
-                        <a class="btn btn-danger btn-sm" style="color: #ffffff" href="deletarUsuario.php?id=<?php echo $id ?>&acesso=<?php echo $acesso ?>" role="button"> <i class="far fa-trash-alt"></i> Deletar</a>
+                        <a class="btn btn-danger btn-sm" style="color: #ffffff" href="deletarUsuario.php?id=<?php echo $id ?>" role="button"> <i class="far fa-trash-alt"></i> Deletar</a>
                     </td>
                 </tr>
             <?php

@@ -32,7 +32,7 @@
             <center>
                 <img src="img/iconfinder_unlock_1287508.png" alt="">
             </center>
-            <form action="">
+            <form action="index1.php" method="post">
                 <div class="form-group">
                     <label>Usuário</label>
                     <input type="text" name="usuario" class="form-control" placeholder="Usuário" autocomplete="off" require>
@@ -41,11 +41,12 @@
                     <label>Senha</label>
                     <input type="password" name="senha" class="form-control" placeholder="Senha" autocomplete="off" require>
                 </div>
+
+                <div style="text-align: right">
+                    <button type="submit" class="btn btn-sm btn-success">Entrar</button>
+                </div>
             </form>
 
-            <div style="text-align: right">
-                <button type="submit" class="btn btn-sm btn-success">Entrar</button>
-            </div>
         </div>
     </div>
 

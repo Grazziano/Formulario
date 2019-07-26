@@ -19,3 +19,5 @@ if ($acesso == 3) {
     $atualizacao = mysqli_query($conexao, $update);
     echo "GERENTE APROVADO";
 }
+
+header("Location: aprovarUsuario.php"); // Redireciona para página de aprovação

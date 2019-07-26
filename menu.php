@@ -10,20 +10,44 @@
 </head>
 
 <body>
+    <?php
+    session_start();
+    $usuario = $_SESSION['usuario'];
+
+    if (!isset($_SESSION['usuario'])) {
+        header('Location: index.php');
+    }
+
+    include 'conexao.php';
+
+    $sql = "SELECT acesso FROM usuarios WHERE email = '$usuario' AND status = 'Ativo'";
+    $buscar = mysqli_query($conexao, $sql);
+    $array = mysqli_fetch_array($buscar);
+    $acesso = $array['acesso'];
+    ?>
 
     <div class="container" style="margin-top: 40px">
 
         <div class="row">
 
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Adicionar Produto</h5>
-                        <p class="card-text">Opção para adicionar produtos no estoque.</p>
-                        <a href="adicionarProduto.php" class="btn btn-primary">Cadastrar Produto</a>
+            <?php
+
+            if (($acesso == 1) || ($acesso == 3)) {
+
+                ?>
+
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Adicionar Produto</h5>
+                            <p class="card-text">Opção para adicionar produtos no estoque.</p>
+                            <a href="adicionarProduto.php" class="btn btn-primary">Cadastrar Produto</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <?php
+            }
+            ?>
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
@@ -33,10 +57,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="row">
-
+      
             <div class="col-sm-6" style="margin-top: 20px">
                 <div class="card">
                     <div class="card-body">
@@ -52,6 +73,16 @@
                         <h5 class="card-title">Adicionar Fornecedor</h5>
                         <p class="card-text">Adicionar fornecedores.</p>
                         <a href="adicionarFornecedor.php" class="btn btn-primary">Cadastrar Fornecedor</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6" style="margin-top: 20px">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Cadastrar Usuários</h5>
+                        <p class="card-text">Aprovar usuários cadastrados.</p>
+                        <a href="cadastroUsuario.php" class="btn btn-primary">Cadastrar Usuário</a>
                     </div>
                 </div>
             </div>
